@@ -3,7 +3,8 @@ import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
 import Signup from "../views/Signup.vue";
 import Login from "../views/Login.vue";
-import quickQuestion from "../views/quickQuestion.vue";
+import QuickQuestion from "../views/QuickQuestion.vue";
+import LoginFromNewDevice from "../views/LoginFromNewDevice.vue";
 
 Vue.use(VueRouter);
 
@@ -34,8 +35,13 @@ const routes = [
   },
   {
     path: "/quickquestion",
-    name: "quickQuestion",
-    component: quickQuestion,
+    name: "QuickQuestion",
+    component: QuickQuestion,
+  },
+  {
+    path: "/loginfromnewdevice",
+    name: "LoginFromNewDevice",
+    component: LoginFromNewDevice,
   },
 ];
 

@@ -23,31 +23,40 @@
             </v-btn>
           </template>
         </v-menu>
-
       </v-app-bar>
       <!------------         Nav End         ----------------->
 
-
       <!------------         Main Container         ----------------->
       <v-container>
-        <br /><br />
+        <br />
         <v-row class="text-center">
           <v-col cols="5" class="mx-auto">
             <div>
-              <h1 class="text-left">Binance Account Login</h1>
+              <h1 class="text-left">Confirm New Device Login</h1>
               <p class="text-left">
-                Welcome back! Log In with your Email, Phone number or QR code
+                To secure your account, please complete the following
+                verification.
               </p>
-              <v-btn class="mr-10"> Email </v-btn>
-              <v-btn> Mobile </v-btn>
             </div>
 
             <br />
 
             <v-form ref="form" v-model="valid" lazy-validation>
               <v-text-field
-                prepend-inner-icon="mdi-account"
-                label="Email"
+                prepend-inner-icon="mdi-phone"
+                label="Phone Verification Code"
+                placeholder="Enter the 6 digit code sent to 331***6751."
+                type="text"
+                v-model="userdata.phone"
+                filled
+                clearable
+                required
+              ></v-text-field>
+
+              <v-text-field
+                prepend-inner-icon="mdi-email"
+                label="Email Verification Code"
+                placeholder="Enter the 6 digit code sent to mia***@gmail.com"
                 type="email"
                 v-model="userdata.email"
                 filled
@@ -56,70 +65,54 @@
               ></v-text-field>
 
               <v-text-field
-                prepend-inner-icon="mdi-lock"
-                :append-icon="show1 ? 'mdi-eye' : 'mdi-eye-off'"
-                :type="show1 ? 'text' : 'password'"
-                @click:append="show1 = !show1"
-                label="Password"
+                prepend-inner-icon="mdi-account"
+                label="Authenticator Code"
+                placeholder="Enter the 6 digit code from Binance/Google Authenticator"
+                type="text"
+                v-model="userdata.authCode"
                 filled
                 clearable
-                v-model="userdata.password"
+                required
               ></v-text-field>
+
+              <div class="text-left orange--text text-decoration-none">
+                <strong> Security Verification unavailable? </strong>
+              </div>
               <br />
 
               <v-btn block depressed color="orange" @click.prevent="home">
-                Log In
+                Submit
               </v-btn>
 
               <br />
-
-              <router-link to="/forgetpassword">
-                <div class="text-left orange--text text-decoration-none">
-                  <strong> Forgot Password? </strong>
-                </div>
-              </router-link>
-              <router-link to="/loginfromnewdevice">
-                <div class="text-left orange--text text-decoration-none">
-                  <strong> Login from New Device? </strong>
-                </div>
-              </router-link>
-              <router-link to="/signup">
-                <div class="text-left orange--text text-decoration-none">
-                  <strong> Register Now </strong>
-                </div>
-              </router-link>
             </v-form>
           </v-col>
           <v-col cols="4" class="pl-15">
             <br /><br /><br /><br />
             <v-img
-              src="@/assets/qr.png"
+              src="@/assets/verify.jpg"
               class="rounded mx-auto d-block"
-              width="180px"
-              height="180px"
+              width="350px"
+              height="200px"
+              cover
             >
             </v-img>
             <br />
-            <p><strong> Log in with QR Code </strong></p>
-            <p>
-              Scan this code with the
-              <span class="orange--text"> Binance mobile app</span> to log in
-              instantly.
+            <p class="text-justify">
+              <span> <strong> User authentication </strong> </span>
+              is verifies the identity of a user attempting to gain access to a network or computing resource by authorizing a human-to-machine transfer of credentials during interactions on a network to confirm a <span class="orange--text">user's authenticity. </span>
             </p>
           </v-col>
         </v-row>
       </v-container>
       <!------------         Container End         ----------------->
-
-
     </v-app>
   </div>
 </template>
 
 <script>
-
 export default {
-  name: "Login",
+  name: "LoginFromNewDevice",
   data() {
     return {
       valid: true,
@@ -127,10 +120,10 @@ export default {
       //////////////////////*        Data properties for storing data         */////////////////////
       userdata: {
         email: "",
-        password: "",
+        phone: "",
+        authCode:""
       },
       newUser: [],
-      show1: false,
     };
   },
   components: {},
@@ -138,6 +131,6 @@ export default {
     home() {
       this.$router.push({ name: "Home" });
     },
-  }
+  },
 };
 </script>
