@@ -1,5 +1,5 @@
 <template>
     <div>
-        Account verification Modal
+        Binance Copyrights
     </div>
 </template>

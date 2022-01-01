@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <!-------------       Nav starts from here      ------------>
-    <v-app-bar app>
+    <v-app-bar app color="light-grey" dark>
       <v-toolbar-title>
         <span class="orange--text"> BINANCE</span>
         <span class="pl-5"> Dropdown </span>
@@ -28,10 +28,8 @@
       <v-spacer></v-spacer>
     </v-app-bar>
     <!------------         Nav End         ----------------->
+    <br />
 
-    <br />
-    <br />
-    <br />
 
     <!------------         Fund Account Section         ----------------->
     <v-container>
@@ -109,15 +107,28 @@
 
     <!------------         Market Trend Section         ----------------->
     <v-container>
-    <v-data-table
-      :headers="headers"
-      :items="desserts"
-      hide-default-footer
-      class="elevation-1"
-      @page-count="pageCount = $event"
-    ></v-data-table>
-  </v-container>
+      <v-data-table
+        :headers="headers"
+        :items="desserts"
+        hide-default-footer
+        class="elevation-1"
+        @page-count="pageCount = $event"
+      ></v-data-table>
+    </v-container>
     <!------------         Market Trend END         ----------------->
+    <br />
+
+
+    <!------------         Router Links Section          ----------------->
+    <v-container>
+      <router-link to="/paymentmethod">
+        <v-btn class="mr-10"> Payment Method for Trading </v-btn>
+      </router-link>
+      <router-link to="/convertotcportal">
+        <v-btn> Convert & OTC Portal </v-btn>
+      </router-link>
+    </v-container>
+    <!------------         Router Links Section End           ----------------->
 
 
     <!------------         Trade Anywhere Section         ----------------->
@@ -158,112 +169,124 @@
             <strong> IOS & Android </strong>
           </span>
 
-            <p></p>
-            <br>
+          <p></p>
+          <br />
           <div class="parent">
-            <h4 class="item1 pl-14"> <strong> <i class="fab fa-apple"></i> App store </strong> </h4>
-            <h4 class="item2 pl-14"> <strong> <i class="fab fa-android"></i> Android APK </strong> </h4>
-            <h4 class="item3 pl-14"> <strong> <i class="fab fa-google-play"></i> Google Play </strong> </h4>
-            <h4 class="item4 pl-14"> <strong> <i class="fab fa-apple"></i> MacOS </strong> </h4>
-            <h4 class="item5 pl-14"> <strong> <i class="fab fa-windows"></i> Windows </strong> </h4>
-            <h4 class="item6 pl-14"> <strong> <i class="fab fa-linux"></i> Linux </strong> </h4>
-            <h4 class="item7 pl-14"> <strong> <i class="fas fa-plug"></i>  API </strong> </h4>
+            <h4 class="item1 pl-14">
+              <strong> <i class="fab fa-apple"></i> App store </strong>
+            </h4>
+            <h4 class="item2 pl-14">
+              <strong> <i class="fab fa-android"></i> Android APK </strong>
+            </h4>
+            <h4 class="item3 pl-14">
+              <strong> <i class="fab fa-google-play"></i> Google Play </strong>
+            </h4>
+            <h4 class="item4 pl-14">
+              <strong> <i class="fab fa-apple"></i> MacOS </strong>
+            </h4>
+            <h4 class="item5 pl-14">
+              <strong> <i class="fab fa-windows"></i> Windows </strong>
+            </h4>
+            <h4 class="item6 pl-14">
+              <strong> <i class="fab fa-linux"></i> Linux </strong>
+            </h4>
+            <h4 class="item7 pl-14">
+              <strong> <i class="fas fa-plug"></i> API </strong>
+            </h4>
           </div>
-
         </v-col>
       </v-row>
     </v-container>
     <!------------         Trade Anywhere END         ----------------->
-
-
+    
   </div>
 </template>
 
 <script>
-  export default {
-    data () {
-      return {
-        headers: [
-          {
-            text: 'Name',
-            align: 'start',
-            sortable: false,
-            value: 'name',
-          },
-          { text: 'Last Price', value: 'lastprice' },          
-          { text: '24h Change', value: 'avgChange' },
-          { text: 'Markets', value: 'trend' }
-        ],
-        desserts: [
-          {
-            name: 'BNB BNB',
-            lastprice: '$516.45',
-            trend: 'increasing',
-            avgChange: '+0.35%',
-          },
-          {
-            name: 'BTC Bitcoin',
-            lastprice: '$47,331.06',
-            trend: 'slow',
-            avgChange: '+1.45%',
-          },
-          {
-            name: 'ETM Ethereum',
-            lastprice: '$3,745.17',
-            trend: 'slow',
-            avgChange: '+2.26%',
-          },
-          {
-            name: 'LUNA Terra',
-            lastprice: '$86.66',
-            trend: 'increasing',
-            avgChange: '+4.98%',
-          },
-          {
-            name: 'MATIC Polygon',
-            lastprice: '$2.52',
-            trend: 'increasing',
-            avgChange: '+3.37%',
-          },
-          {
-            name: 'SHIB SHIBA INU',
-            lastprice: '$0.000034',
-            trend: 'slow',
-            avgChange: '+1.49%',
-          },
-          {
-            name: 'SOL Solana',
-            lastprice: '$170.99',
-            trend: 'slow',
-            avgChange: '+0.22%',
-          },
-          {
-            name: 'ROSE Oasis Network',
-            lastprice: '$0.400160',
-            trend: 'increasing',
-            avgChange: '+2.78%',
-          },
-        ],
-      }
-    },
-  }
+export default {
+  data() {
+    return {
+      headers: [
+        {
+          text: "Name",
+          align: "start",
+          sortable: false,
+          value: "name",
+        },
+        { text: "Last Price", value: "lastprice" },
+        { text: "24h Change", value: "avgChange" },
+        { text: "Markets", value: "trend" },
+      ],
+      desserts: [
+        {
+          name: "BNB BNB",
+          lastprice: "$516.45",
+          trend: "increasing",
+          avgChange: "+0.35%",
+        },
+        {
+          name: "BTC Bitcoin",
+          lastprice: "$47,331.06",
+          trend: "slow",
+          avgChange: "+1.45%",
+        },
+        {
+          name: "ETM Ethereum",
+          lastprice: "$3,745.17",
+          trend: "slow",
+          avgChange: "+2.26%",
+        },
+        {
+          name: "LUNA Terra",
+          lastprice: "$86.66",
+          trend: "increasing",
+          avgChange: "+4.98%",
+        },
+        {
+          name: "MATIC Polygon",
+          lastprice: "$2.52",
+          trend: "increasing",
+          avgChange: "+3.37%",
+        },
+        {
+          name: "SHIB SHIBA INU",
+          lastprice: "$0.000034",
+          trend: "slow",
+          avgChange: "+1.49%",
+        },
+        {
+          name: "SOL Solana",
+          lastprice: "$170.99",
+          trend: "slow",
+          avgChange: "+0.22%",
+        },
+        {
+          name: "ROSE Oasis Network",
+          lastprice: "$0.400160",
+          trend: "increasing",
+          avgChange: "+2.78%",
+        },
+      ],
+    };
+  },
+};
 </script>
 
 
 <style scoped>
-.heads{
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    flex-direction: row;
-    flex-wrap: wrap;
+.heads {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
-.parent{
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    flex-direction: row;
-    flex-wrap: wrap;
+.parent {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 </style>
