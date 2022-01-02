@@ -1,35 +1,84 @@
 <template>
   <div class="home">
     <!-------------       Nav starts from here      ------------>
-    <v-app-bar app color="light-grey" dark>
-      <v-toolbar-title>
-        <span class="orange--text"> BINANCE</span>
-        <span class="pl-5"> Dropdown </span>
-        <span class="pl-3"> Buy Crypto </span>
-        <span class="pl-3"> Markets </span>
-        <span class="pl-3"> Trade </span>
-        <span class="pl-3"> Derivatives </span>
-        <span class="pl-3"> Earn </span>
-        <span class="pl-3"> Finance </span>
-        <span class="pl-3"> NFT New </span>
+    <div>
+      <b-navbar toggleable="lg" type="dark" variant="dark">
+        <b-navbar-brand href="#"
+          ><span class="ml-5 orange--text">BINANCE</span></b-navbar-brand
+        >
 
-        <span class="pl-14 ml-14"> Wallet </span>
-        <span class="pl-3"> Orders </span>
-        <span class="pl-3"> Bell </span>
-        <span class="pl-3"> Downloads </span>
-        <span class="pl-3"> English </span>
-        <span class="pl-3 pr-3"> USD </span>
-        <v-btn color="grey">
-          <v-icon> mdi-account </v-icon>
-        </v-btn>
-      </v-toolbar-title>
+        <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
-      <v-spacer></v-spacer>
-      <v-spacer></v-spacer>
-    </v-app-bar>
+        <b-collapse id="nav-collapse" is-nav>
+          <b-navbar-nav>
+            <b-nav-item-dropdown right>
+              <!-- Using 'button-content' slot -->
+              <template #button-content> Dropdown </template>
+              <b-dropdown-item href="#">List 1</b-dropdown-item>
+              <b-dropdown-item href="#">List 2</b-dropdown-item>
+            </b-nav-item-dropdown>
+            <b-nav-item-dropdown right>
+              <!-- Using 'button-content' slot -->
+              <template #button-content> BuyCrypto </template>
+              <b-dropdown-item href="#">EURO</b-dropdown-item>
+              <b-dropdown-item href="#">USD</b-dropdown-item>
+              <b-dropdown-item href="#">BTC</b-dropdown-item>
+            </b-nav-item-dropdown>
+            <b-nav-item href="#">Markets</b-nav-item>
+            <b-nav-item-dropdown right>
+              <!-- Using 'button-content' slot -->
+              <template #button-content> Trade </template>
+              <b-dropdown-item href="#">Sessional</b-dropdown-item>
+            </b-nav-item-dropdown>
+            <b-nav-item-dropdown right>
+              <!-- Using 'button-content' slot -->
+              <template #button-content> Derivatives </template>
+              <b-dropdown-item href="#">Normal</b-dropdown-item>
+            </b-nav-item-dropdown>
+            <b-nav-item-dropdown right>
+              <!-- Using 'button-content' slot -->
+              <template #button-content> Earn </template>
+              <b-dropdown-item href="#">EURO</b-dropdown-item>
+              <b-dropdown-item href="#">USD</b-dropdown-item>
+              <b-dropdown-item href="#">BTC</b-dropdown-item>
+            </b-nav-item-dropdown>
+            <b-nav-item-dropdown right>
+              <!-- Using 'button-content' slot -->
+              <template #button-content> Finance </template>
+              <b-dropdown-item href="#">Personal</b-dropdown-item>
+              <b-dropdown-item href="#">Departmental</b-dropdown-item>
+            </b-nav-item-dropdown>
+            <b-nav-item href="#">NFT New</b-nav-item>
+          </b-navbar-nav>
+
+          <!-- Right aligned nav items -->
+          <b-navbar-nav class="ml-auto">
+            <b-nav-item-dropdown text="Wallet" right>
+              <b-dropdown-item href="#">Cash</b-dropdown-item>
+              <b-dropdown-item href="#">Credit Card</b-dropdown-item>
+            </b-nav-item-dropdown>
+
+            <b-nav-item-dropdown right>
+              <!-- Using 'button-content' slot -->
+              <template #button-content>
+                <em>Orders</em>
+              </template>
+              <b-dropdown-item href="#">Clothes</b-dropdown-item>
+              <b-dropdown-item href="#">Food</b-dropdown-item>
+            </b-nav-item-dropdown>
+            <b-nav-item><v-icon color="white" class="mr-2"> mdi-account </v-icon></b-nav-item>
+            <b-nav-item><v-icon color="white" class="mr-2"> mdi-bell </v-icon></b-nav-item>
+            <b-nav-item href="#">Downloads</b-nav-item>
+            <b-nav-item href="#">English</b-nav-item>
+            <b-nav-item>|</b-nav-item>
+            <b-nav-item href="#">USD</b-nav-item>
+          </b-navbar-nav>
+        </b-collapse>
+      </b-navbar>
+    </div>
+    <v-spacer></v-spacer>
     <!------------         Nav End         ----------------->
     <br />
-
 
     <!------------         Fund Account Section         ----------------->
     <v-container>
@@ -45,9 +94,19 @@
           </div>
         </v-col>
       </v-row>
-      <v-btn depressed color="yellow" @click.prevent="logIn">
+
+      <b-alert v-model="showDismissibleAlert" variant="success" dismissible>
+        Welcome to Fund Account Section
+      </b-alert>
+      <b-button
+        dense
+        @click="showDismissibleAlert = true"
+        variant="warning"
+        class="m-1"
+      >
         Fund Account
-      </v-btn>
+        <!-- Fund Account ({{ showDismissibleAlert ? "visible" : "hidden" }}) -->
+      </b-button>
     </v-container>
 
     <v-container>
@@ -92,7 +151,9 @@
       <br />
       <br />
       <br />
-      <p>Binance to Acquire Outstanding shares in Swipe 12-30 More ></p>
+      <p>Binance to Acquire Outstanding shares in Swipe 12-30
+        <span class="orange--text"> More ></span>
+      </p>
       <p>
         Special Notice About Binance.com in Singapore
         <span class="orange--text"> More </span>
@@ -103,7 +164,6 @@
       </p>
     </v-container>
     <!------------         Fund Account Section END         ----------------->
-
 
     <!------------         Market Trend Section         ----------------->
     <v-container>
@@ -118,7 +178,6 @@
     <!------------         Market Trend END         ----------------->
     <br />
 
-
     <!------------         Router Links Section          ----------------->
     <v-container>
       <router-link to="/paymentmethod">
@@ -130,6 +189,7 @@
     </v-container>
     <!------------         Router Links Section End           ----------------->
 
+    <v-container> </v-container>
 
     <!------------         Trade Anywhere Section         ----------------->
     <v-container>
@@ -198,7 +258,6 @@
       </v-row>
     </v-container>
     <!------------         Trade Anywhere END         ----------------->
-    
   </div>
 </template>
 
@@ -206,6 +265,7 @@
 export default {
   data() {
     return {
+      showDismissibleAlert: false,
       headers: [
         {
           text: "Name",

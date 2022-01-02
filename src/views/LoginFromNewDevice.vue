@@ -31,7 +31,7 @@
       <v-container>
         <br />
         <v-row class="text-center">
-          <v-col cols="5" class="mx-auto">
+          <v-col cols="12" class="mx-auto" lg="5" xl="5" md="6" sm="8" xs="12">
             <div>
               <h1 class="text-left">Confirm New Device Login</h1>
               <p class="text-left">
@@ -88,7 +88,7 @@
               <br />
             </v-form>
           </v-col>
-          <v-col cols="4" class="pl-15">
+          <v-col cols="12" class="pl-15" lg="5" xl="5" md="6" sm="8" xs="12">
             <br /><br /><br /><br />
             <v-img
               src="@/assets/verify.jpg"
