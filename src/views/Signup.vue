@@ -6,8 +6,6 @@
         <v-toolbar-title>
           <span class="orange--text"> BINANCE</span>
         </v-toolbar-title>
-
-        <v-spacer></v-spacer>
         <v-spacer></v-spacer>
 
         <v-menu left bottom>

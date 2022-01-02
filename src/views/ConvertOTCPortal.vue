@@ -89,6 +89,7 @@
     <!-------------       bg-image      ------------>
     <v-img class="box" src="@/assets/binance.png" cover></v-img>
 
+
     <!------------         Main Container         ----------------->
     <v-container>
       <div>
