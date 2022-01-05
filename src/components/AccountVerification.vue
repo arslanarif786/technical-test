@@ -1,5 +1,5 @@
 <template>
     <div>
-        Account verification Modal
+        KYC Account verification
     </div>
 </template>
