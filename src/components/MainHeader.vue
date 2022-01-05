@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="fixed-top">
       <b-navbar toggleable="lg" type="dark" variant="dark">
         <b-navbar-brand href="#"
           ><span class="ml-5 orange--text">BINANCE</span></b-navbar-brand
