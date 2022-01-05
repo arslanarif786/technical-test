@@ -11,7 +11,7 @@
           <b-navbar-nav>
             <b-nav-item-dropdown right>
               <!-- Using 'button-content' slot -->
-              <template #button-content> Dropdown </template>
+              <template #button-content><v-icon color="white">fas fa-list</v-icon></template>
               <b-dropdown-item href="#">List 1</b-dropdown-item>
               <b-dropdown-item href="#">List 2</b-dropdown-item>
             </b-nav-item-dropdown>
