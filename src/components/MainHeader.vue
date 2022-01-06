@@ -11,12 +11,6 @@
           <b-navbar-nav>
             <b-nav-item-dropdown right>
               <!-- Using 'button-content' slot -->
-              <template #button-content><v-icon color="white">fas fa-list</v-icon></template>
-              <b-dropdown-item href="#">List 1</b-dropdown-item>
-              <b-dropdown-item href="#">List 2</b-dropdown-item>
-            </b-nav-item-dropdown>
-            <b-nav-item-dropdown right>
-              <!-- Using 'button-content' slot -->
               <template #button-content> BuyCrypto </template>
               <b-dropdown-item href="#">EURO</b-dropdown-item>
               <b-dropdown-item href="#">USD</b-dropdown-item>
@@ -70,6 +64,7 @@
             <b-nav-item href="#">English</b-nav-item>
             <b-nav-item>|</b-nav-item>
             <b-nav-item href="#">USD</b-nav-item>
+            <b-nav-item @click="logOut"><i class="fa fa-sign-out" aria-hidden="true"></i></b-nav-item>
           </b-navbar-nav>
         </b-collapse>
       </b-navbar>
@@ -82,6 +77,9 @@ export default {
     home() {
       this.$router.push({ name: "Home" });
     },
+    logOut() {
+      this.$router.push({ name: "Login" });
+    }
   }
 }
 </script>
