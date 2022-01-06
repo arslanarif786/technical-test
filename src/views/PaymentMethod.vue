@@ -1,20 +1,16 @@
 <template>
   <div>
     <v-app>
-
       <!-------------       Nav starts from here      ------------>
-      <MainHeader/>
+      <MainHeader />
       <v-spacer></v-spacer>
       <!------------         Nav End         ----------------->
 
+      <h1 class="text-left pt-16 pb-5 pl-16 grey lighten-4">Deposit Fiat</h1>
+      <br />
 
       <!------------         Container         ----------------->
       <v-container>
-        <br /><br />
-
-        <h1 class="text-left">Deposit Fiat</h1>
-        <br />
-
         <v-row>
           <v-col cols="12" class="mx-auto" lg="5" xl="5" md="6" sm="8" xs="12">
             <h5 class="text-left">1. Select Currency</h5>
@@ -85,14 +81,14 @@
       </v-container>
       <!------------         Container END         ----------------->
 
-      <Footer/>
+      <Footer />
     </v-app>
   </div>
 </template>
 
 <script>
-import MainHeader from '@/components/MainHeader.vue'
-import Footer from '@/components/Footer.vue'
+import MainHeader from "@/components/MainHeader.vue";
+import Footer from "@/components/Footer.vue";
 export default {
   name: "ConvertOTCPortal",
   data() {
@@ -103,7 +99,7 @@ export default {
   },
   components: {
     MainHeader,
-    Footer
+    Footer,
   },
   methods: {},
 };

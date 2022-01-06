@@ -1,7 +1,6 @@
 <template>
   <div>
-
-      <MainHeader/>
+    <MainHeader />
     <v-stepper class="mt-15" v-model="e1">
       <v-stepper-header>
         <v-stepper-step color="#fcd535" :complete="e1 > 1" step="1">
@@ -15,6 +14,9 @@
         </v-stepper-step>
 
         <v-divider></v-divider>
+        <v-stepper-step color="#fcd535" step="3">
+          Upload Document
+        </v-stepper-step>
       </v-stepper-header>
 
       <v-stepper-items>
@@ -27,6 +29,15 @@
 
         <v-stepper-content step="2">
           <IdentityDocument />
+          <v-btn color="#fcd535" @click="e1 = 3"> Continue </v-btn>
+
+          <v-btn text> Cancel </v-btn>
+        </v-stepper-content>
+        <v-stepper-content step="3">
+          <div>
+            Are you agree to the policies and to upload all the documents ?
+          </div>
+          <br>
           <v-btn color="#fcd535" @click="e1 = 1"> Continue </v-btn>
 
           <v-btn text> Cancel </v-btn>
