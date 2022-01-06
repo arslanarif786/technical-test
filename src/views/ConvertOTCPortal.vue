@@ -56,12 +56,15 @@
       </v-row>
     </v-container>
     <!------------         Main Container END         ----------------->
+    
+    <Footer/>
   </div>
 </template>
 
 
 <script>
 import MainHeader from '@/components/MainHeader.vue'
+import Footer from '@/components/Footer.vue'
 export default {
   name: "ConvertOTCPortal",
   data() {
@@ -72,7 +75,8 @@ export default {
     };
   },
   components: {
-    MainHeader
+    MainHeader,
+    Footer
   },
   methods: {},
 };

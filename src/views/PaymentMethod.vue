@@ -84,6 +84,8 @@
         </v-row>
       </v-container>
       <!------------         Container END         ----------------->
+
+      <Footer/>
     </v-app>
   </div>
 </template>
@@ -91,6 +93,7 @@
 
 <script>
 import MainHeader from '@/components/MainHeader.vue'
+import Footer from '@/components/Footer.vue'
 export default {
   name: "ConvertOTCPortal",
   data() {
@@ -100,7 +103,8 @@ export default {
     };
   },
   components: {
-    MainHeader
+    MainHeader,
+    Footer
   },
   methods: {},
 };
