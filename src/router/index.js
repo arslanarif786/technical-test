@@ -7,6 +7,7 @@ import QuickQuestion from "../views/QuickQuestion.vue";
 import LoginFromNewDevice from "../views/LoginFromNewDevice.vue";
 import ConvertOTCPortal from "../views/ConvertOTCPortal.vue";
 import PaymentMethod from "../views/PaymentMethod.vue";
+import KYCVerification from "../views/KYCVerification.vue";
 
 Vue.use(VueRouter);
 
@@ -52,6 +53,11 @@ const routes = [
     path: "/quickquestion",
     name: "QuickQuestion",
     component: QuickQuestion,
+  },
+  {
+    path: "/kyc-verification",
+    name: "KYCVerification",
+    component: KYCVerification,
   },
 ];
 

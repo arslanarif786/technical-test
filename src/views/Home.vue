@@ -109,7 +109,10 @@
         <v-btn class="mr-10"> Payment Method for Trading </v-btn>
       </router-link>
       <router-link to="/convertotcportal">
-        <v-btn> Convert & OTC Portal </v-btn>
+        <v-btn class="mr-10"> Convert & OTC Portal </v-btn>
+      </router-link>
+      <router-link to="/kyc-verification">
+        <v-btn> KYC Verification </v-btn>
       </router-link>
     </v-container>
     <!------------         Router Links Section End           ----------------->

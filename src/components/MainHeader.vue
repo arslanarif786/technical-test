@@ -2,7 +2,7 @@
     <div class="fixed-top">
       <b-navbar toggleable="lg" type="dark" variant="dark">
         <b-navbar-brand href="#"
-          ><span class="ml-5 orange--text">BINANCE</span></b-navbar-brand
+          ><span class="ml-5 orange--text" @click.prevent="home">BINANCE</span></b-navbar-brand
         >
 
         <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
@@ -75,3 +75,13 @@
       </b-navbar>
     </div>
 </template>
+
+<script>
+export default {
+  methods: {
+    home() {
+      this.$router.push({ name: "Home" });
+    },
+  }
+}
+</script>
