@@ -25,7 +25,7 @@
               <v-text-field
                 prepend-inner-icon="mdi-phone"
                 label="Phone Verification Code"
-                placeholder="Enter the 6 digit code sent to 331***6751."
+                hint="Enter the 6 digit code sent to 331***6751."
                 type="text"
                 v-model="userdata.phone"
                 filled
@@ -36,7 +36,7 @@
               <v-text-field
                 prepend-inner-icon="mdi-email"
                 label="Email Verification Code"
-                placeholder="Enter the 6 digit code sent to mia***@gmail.com"
+                hint="Enter the 6 digit code sent to mia***@gmail.com"
                 type="email"
                 v-model="userdata.email"
                 filled
@@ -47,7 +47,7 @@
               <v-text-field
                 prepend-inner-icon="mdi-account"
                 label="Authenticator Code"
-                placeholder="Enter the 6 digit code from Binance/Google Authenticator"
+                hint="Enter the 6 digit code from Binance/Google Authenticator"
                 type="text"
                 v-model="userdata.authCode"
                 filled
