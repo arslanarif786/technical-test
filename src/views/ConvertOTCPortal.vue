@@ -1,5 +1,6 @@
 <template>
   <div>
+
     <!-------------       Nav starts from here      ------------>
     <MainHeader/>
     <!------------         Nav End         ----------------->
